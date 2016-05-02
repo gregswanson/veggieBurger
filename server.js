@@ -30,37 +30,9 @@ app.set('view engine', 'handlebars');
 
 
 var connection = require('./config/connection.js')
-// var mysql      = require('mysql');
-// var connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'root',
-//   //password : 'nodeuser',
-//   database : 'burgers_db'
-// });
+
 var orm = require('./config/orm.js');
-// connection.connect(function(err) {
-// if (err) {
-// console.error('error connecting: ' + err.stack);
-// return;
-// };
-// console.log('connected as id ' + connection.threadId);
-//var routes = require('./controllers/burgers_controller.js');
 
-
-// app.get('/', function(req,res) {
-// //     //mySQL commands
-// //     connection.query('SELECT * FROM burgers WHERE devoured = "1"' , function(err, col) {
-// //       if (err) throw err;
-// //         res.render('index', {col});
-// //         //console.log(col);
-// //         });
-    
-//     connection.query('SELECT * FROM burgers' , function(err, col) {
-//       if (err) throw err;
-//         res.render('index', {col});
-//         console.log({col});
-//         });
-//     })
 
 app.get('/', function(req,res) {
     //mySQL commands
@@ -89,11 +61,9 @@ app.get('/', function(req,res) {
 
 app.put('/update', function(req,res){
     //mySQL commands
-    //console.log(req.body.burger_type);
     var queryString = 'INSERT INTO burgers (burger_name, devoured) VALUES ("' + req.body.burger_type + '", 1)'; 
         connection.query(queryString, function(err, result) {
  
-           //console.log(req.body.burger_type);
        });
     res.redirect('/');
 });
@@ -105,7 +75,6 @@ app.put('/devour/:name', function(req,res){
     var queryString = 'UPDATE burgers SET devoured=0 WHERE burger_name="' + burger + '"'; 
        connection.query(queryString, function(err, result) {
  
-           console.log(req.params.name);
        });
     res.redirect('/');
 });
