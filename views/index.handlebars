@@ -1,0 +1,47 @@
+<div class="row">
+	<div class=" col-sm-12 text-center">
+		<h1>Eat Dat Veggie Burger</h1>
+		<br>
+	</div>
+</div>
+<div class="row">
+<div class="panel panel-success">
+<div class="panel-heading text-center"><h3>Get your veggie burger on!</h3></div>
+<div class="panel-body">
+		<div class="col-sm-4"> 	
+		 {{#each eatIt}}
+			<div>
+				<div class="list mtop"> {{@index}}. {{this.burger_name}} </div>
+			</div>
+		{{/each}}
+		</div>	
+		<div class="col-sm-4 text-center">
+		{{#each eatIt}}
+			<form method="POST" action="/devour/{{this.burger_name}}?_method=PUT" class="button-size">
+				
+				<button type="submit" class="btn btn-info mtop">Devour it!</button>
+			</form>
+		  {{/each}}
+		 </div> 
+		 <div class="col-sm-4"> 	
+		 {{#each devourIt}}
+			<div>
+				<div class="list mtop">{{@index}}.  {{this.burger_name}} </div>
+			</div>
+		{{/each}}
+		</div>
+</div>		
+</div>		
+</div>
+
+<div class="row">
+	<div class="col-sm-12 text-center">
+		<h3>Enter your veggie burger here</h3>
+		<div>
+			<form method="POST" action="/update?_method=PUT" class="button-size">
+				<textarea class="form-control" type="text" name="burger_type"></textarea>
+				<button type="submit" class="btn btn-success mtop">Add it!</button>
+			</form>
+	</div>
+</div>
+
