@@ -11,18 +11,21 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 var exphbs = require('express-handlebars');
 
-// var hbs = exphbs.create({
-//     // Specify helpers which are only registered on this instance. 
-//     helpers: {
-//         inc: function (value) { return parseInt(value + 1); }
-//     }
-// });
+var hbs = exphbs.create({
+    defaultLayout: 'main',
+    // Specify helpers which are only registered on this instance. 
+    helpers: {
+        inc: function (value) { return parseInt(value) + 1; }
+        
+    }
+});
 
 
 
 
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 

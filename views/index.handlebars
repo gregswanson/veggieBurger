@@ -11,7 +11,7 @@
 		<div class="col-sm-4"> 	
 		 {{#each eatIt}}
 			<div>
-				<div class="list mtop"> {{@index}}. {{this.burger_name}} </div>
+				<div class="list mtop"> {{inc @index}}. {{this.burger_name}} </div>
 			</div>
 		{{/each}}
 		</div>	
@@ -26,7 +26,7 @@
 		 <div class="col-sm-4"> 	
 		 {{#each devourIt}}
 			<div>
-				<div class="list mtop">{{@index}}.  {{this.burger_name}} </div>
+				<div class="list mtop">{{inc @index}}.  {{this.burger_name}} </div>
 			</div>
 		{{/each}}
 		</div>
