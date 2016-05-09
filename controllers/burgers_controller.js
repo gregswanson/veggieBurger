@@ -16,7 +16,7 @@ module.exports = function(app){
 
 		});
 
-	    //res.redirect('/');
+	    res.redirect('/');
 	});
 
 	app.put('/devour/:name', function(req,res){
@@ -25,7 +25,7 @@ module.exports = function(app){
 
 		});
 	   
-	    //res.redirect('/');
+	    res.redirect('/');
 	});
 }
 
