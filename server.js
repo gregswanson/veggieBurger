@@ -32,5 +32,5 @@ require("./controllers/burgers_controller.js")(app);
         
 
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3306;
 app.listen(PORT);
