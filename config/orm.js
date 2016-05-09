@@ -20,9 +20,8 @@ var orm = {
                 }
 
             }
-            //var data = {eatIt: eatIt, devourIt: devourIt};
             callback(data);
-            console.log(data);
+            //console.log(data);
         })
     },
     updateBurger: function(req, callback) {
@@ -31,7 +30,6 @@ var orm = {
             connection.query(queryString, function(err, result) {
             callback(result);
            });
-        //res.redirect('/');
     },
 
     devourBurger: function(burger,callback) {

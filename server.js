@@ -29,9 +29,8 @@ var connection = require('./config/connection.js')
 var orm = require('./config/orm.js');
 
 require("./controllers/burgers_controller.js")(app);
-    
-    
+        
 
 
-var port = 3000;
-app.listen(port);
+var PORT = process.env.PORT || 3000;
+app.listen(PORT);
